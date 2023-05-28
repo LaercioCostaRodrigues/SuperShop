@@ -4,7 +4,7 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace SuperShop.Data.Entities
 {
-    public class Product 
+    public class Product : IEntity
     {
         public int Id { get; set; }
 
