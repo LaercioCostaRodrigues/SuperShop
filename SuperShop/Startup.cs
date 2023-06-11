@@ -37,14 +37,15 @@ namespace SuperShop
 
             services.AddDbContext<DataContext>(cfg =>
             {
-                cfg.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
+                //cfg.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
+                cfg.UseSqlServer(this.Configuration.GetConnectionString("AzureConnection"));
             });
 
             services.AddTransient<SeedDb>();
 
             services.AddScoped<IUserHelper, UserHelper>();
 
-            services.AddScoped<IImageHelper, ImageHelper>();
+            services.AddScoped<IBlobHelper, BlobHelper>();
 
             services.AddScoped<IConveterHelper, ConverterHelper>();
 
